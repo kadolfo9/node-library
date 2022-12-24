@@ -9,7 +9,7 @@ export class FindBooksByAuthorUseCase {
     }
 
     public async execute (author: string) {
-        const authorBooks = await this.booksRepository.findByAuthor(author);
+        const authorBooks = await this.booksRepository.findByAuthor(author)
 
         if (!authorBooks) throw new NotFoundException('Não existem livros no nome deste autor.')
 

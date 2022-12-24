@@ -1,4 +1,5 @@
 import { ControllerResponse } from "@/models/controllers/controller";
+import { BadRequestException } from "@/models/exceptions/bad-request-exception";
 import { CreateBookUseCase } from "@/usecases/books/create-book-usecase";
 import { Request, Response } from "express";
 import StatusCode from "status-code-enum";
@@ -10,6 +11,8 @@ export class CreateBookController {
 
     public async execute(request: Request): Promise<ControllerResponse> {
         const { name, author, description } = request.body
+
+        if (!name && !author && !description) throw new BadRequestException('Alguns dados para criação estão faltando.')
 
         const createBook = await this.createBookUseCase.execute({
             name,

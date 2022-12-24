@@ -15,6 +15,6 @@ export class CreateBookUseCase {
 
         const newBook = await this.booksRepository.create(bookData)
 
-        return newBook;
+        return newBook
     }
 }

@@ -1,20 +1,20 @@
 import { Controller, ControllerResponse } from "@/models/controllers/controller";
 import { BadRequestException } from "@/models/exceptions/bad-request-exception";
-import { FindBookByNameUseCase } from "@/usecases/books/find-book-by-name-usecase";
+import { FindBookByIdUseCase } from "@/usecases/books/find-book-by-id-usecase";
 import { Request, Response } from "express";
 import StatusCode from "status-code-enum";
 
-export class FindBookByNameController implements Controller {
+export class FindBookByIdController implements Controller {
     constructor(
-        private readonly findBookByNameUseCase: FindBookByNameUseCase
+        private readonly findBookByIdUseCase: FindBookByIdUseCase
     ) { }
 
     public async execute (request: Request): Promise<ControllerResponse> {
-        const { name } = request.body
+        const { id } = request.body
 
-        if (!name) throw new BadRequestException('O nome do livro está faltando.')
+        if (!id) throw new BadRequestException('O id do livro está faltando.')
 
-        const findBook = await this.findBookByNameUseCase.execute(name)
+        const findBook = await this.findBookByIdUseCase.execute(id)
 
         return {
             statusCode: StatusCode.SuccessAccepted,

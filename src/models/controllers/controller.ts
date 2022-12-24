@@ -6,7 +6,7 @@ export interface Controller {
 
 export interface ControllerResponse {
     statusCode: number
-    data: Record<string, any>
+    data?: Record<string, any>
 }
 
 export type ControllerExecutorFunc = (controller: Controller) => RequestHandler
@@ -21,6 +21,8 @@ export const ControllerExecutor: ControllerExecutorFunc = controller => async (r
     } catch (error) {
         return await response
             .status(error.statusCode ?? 500)
-            .send(error.errorMessage ?? "Internal Server Error")
+            .send({
+                message: error.errorMessage ?? "Internal Server Error"
+            })
     }
 }

@@ -1,4 +1,4 @@
-import { IBook } from "models/entities/book"
+import { IBook, IBookComment } from "models/entities/book"
 
 export interface IBooksRepository {
     create (bookData: IBook): Promise<IBook>
@@ -7,4 +7,5 @@ export interface IBooksRepository {
     findByAuthor (author: string): Promise<IBook[]>
     update (id: string, bookData: IBook): Promise<IBook>
     delete (id: string): Promise<void>
+    addComment(commentData: IBookComment): Promise<IBookComment>
 }

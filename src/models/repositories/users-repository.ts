@@ -1,9 +1,9 @@
 import { IUser } from "models/entities/user";
 
 export interface IUsersRepository {
-    create (userData: IUser): Promise<void>
-    findById (name: string): Promise<void>
-    findByEmail (email: string): Promise<void>
-    update (id: string, userData: IUser): Promise<void>
+    create (userData: IUser): Promise<IUser>
+    findById (name: string): Promise<IUser>
+    findByEmail (email: string): Promise<IUser>
+    update (id: string, userData: IUser): Promise<IUser>
     delete (id: string): Promise<void>
 }

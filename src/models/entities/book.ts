@@ -8,6 +8,17 @@ export interface IBook {
     updatedAt?: Date
 }
 
+export interface IBookComment {
+    id?: string
+    bookId: string
+    userId: string
+
+    comment: string
+
+    createdAt?: Date
+    updatedAt?: Date
+}
+
 export class Book {
     private id: string
     private name: string
