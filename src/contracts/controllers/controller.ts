@@ -1,5 +1,5 @@
 import { Request, RequestHandler, Response } from "express";
-import BaseException from "../../exceptions/base-exception";
+import BaseException from "@/exceptions/base-exception";
 export interface Controller {
     execute: (request: Request) => Promise<ControllerResponse>
 }
