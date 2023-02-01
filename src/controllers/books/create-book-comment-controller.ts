@@ -1,10 +1,10 @@
-import { ControllerResponse } from "@/models/controllers/controller"
-import { BadRequestException } from "@/models/exceptions/bad-request-exception"
-import { CreateBookCommentUseCase } from "@/usecases/books/create-book-comment-usecase"
+import { ControllerResponse } from "@/contracts/controllers/controller"
+import { BadRequestException } from "@/exceptions/bad-request-exception"
+import { CreateBookCommentUseCase } from "@/usecases/books/comments/create-book-comment-usecase"
 import { Request } from "express"
 import StatusCode from "status-code-enum"
 
-export class CreateBookCommentController {
+export default class CreateBookCommentController {
     constructor(
         private readonly createBookCommentUseCase: CreateBookCommentUseCase
     ) { }

@@ -19,7 +19,7 @@ export interface IBookComment {
     updatedAt?: Date
 }
 
-export class Book {
+export default class Book {
     private id: string
     private name: string
     private author: string

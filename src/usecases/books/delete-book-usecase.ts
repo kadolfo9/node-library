@@ -1,7 +1,7 @@
-import { BooksRepository } from "@/database/repositories/books-repository";
-import { NotFoundException } from "@/models/exceptions/not-found-exception";
+import BooksRepository from "@/database/repositories/books-repository";
+import NotFoundException from "@/exceptions/not-found-exception";
 
-export class DeleteBookUseCase {
+export default class DeleteBookUseCase {
     constructor(
         private readonly booksRepository: BooksRepository
     ) {

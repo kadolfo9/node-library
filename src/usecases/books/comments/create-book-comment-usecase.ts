@@ -1,9 +1,9 @@
-import { BooksRepository } from "@/database/repositories/books-repository";
-import { IBookComment } from "@/models/entities/book";
-import { NotFoundException } from "@/models/exceptions/not-found-exception";
-import { FindBookByIdUseCase } from "./find-book-by-id-usecase";
+import BooksRepository from "@/database/repositories/books-repository";
+import { IBookComment } from "@/contracts/entities/book";
+import NotFoundException from "@/exceptions/not-found-exception";
+import FindBookByIdUseCase from "@/usecases/books/find-book-by-id-usecase";
 
-export class CreateBookCommentUseCase {
+export default class CreateBookCommentUseCase {
     constructor (
         private readonly findBookByIdUseCase: FindBookByIdUseCase,
         private readonly booksRepository: BooksRepository

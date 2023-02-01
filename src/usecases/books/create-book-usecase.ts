@@ -1,8 +1,8 @@
-import { BooksRepository } from "@/database/repositories/books-repository";
-import { IBook } from "@/models/entities/book";
-import { ForbiddenException } from "@/models/exceptions/forbidden-exception";
+import BooksRepository from "@/database/repositories/books-repository";
+import { IBook } from "@/contracts/entities/book";
+import ForbiddenException from "@/exceptions/forbidden-exception";
 
-export class CreateBookUseCase {
+export default class CreateBookUseCase {
     constructor (
         private readonly booksRepository: BooksRepository
     ) {

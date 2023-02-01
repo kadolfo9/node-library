@@ -1,4 +1,4 @@
-export class BaseException {
+export default class BaseException {
     public readonly errorMessage: string
     public readonly statusCode: number
 

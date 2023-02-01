@@ -1,10 +1,10 @@
-import { Controller, ControllerResponse } from "@/models/controllers/controller";
-import { BadRequestException } from "@/models/exceptions/bad-request-exception";
+import { Controller, ControllerResponse } from "@/contracts/controllers/controller";
+import { BadRequestException } from "@/exceptions/bad-request-exception";
 import { FindBooksByAuthorUseCase } from "@/usecases/books/find-books-by-author-usecase";
 import { Request, Response } from "express";
 import StatusCode from "status-code-enum";
 
-export class FindBooksByAuthorController implements Controller {
+export default class FindBooksByAuthorController implements Controller {
     constructor(
         private readonly findBooksByAuthorUseCase: FindBooksByAuthorUseCase
     ) { }

@@ -1,8 +1,8 @@
-import { IUser } from "models/entities/user";
-import { IUsersRepository } from "models/repositories/users-repository";
-import { prismaClient } from "..";
+import { IUser } from "@/contracts/entities/user";
+import { IUsersRepository } from "@/contracts/repositories/users-repository";
+import { prismaClient } from "@/database";
 
-export class UsersRepository implements IUsersRepository {
+export default class UsersRepository implements IUsersRepository {
     
     async create (userData: IUser): Promise<IUser> {
         return await prismaClient.users.create({

@@ -1,8 +1,8 @@
-import { BooksRepository } from "@/database/repositories/books-repository";
-import { IBook } from "@/models/entities/book";
-import { NotFoundException } from "@/models/exceptions/not-found-exception";
+import BooksRepository from "@/database/repositories/books-repository";
+import { IBook } from "@/contracts/entities/book";
+import NotFoundException from "@/exceptions/not-found-exception";
 
-export class FindBooksByAuthorUseCase {
+export default class FindBooksByAuthorUseCase {
     constructor(
         private readonly booksRepository: BooksRepository
     ) {

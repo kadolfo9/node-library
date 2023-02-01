@@ -1,9 +1,9 @@
-import { Book, IBook, IBookComment } from "@/models/entities/book";
-import { IBooksRepository } from "@/models/repositories/books-repository";
+import Book, { IBook, IBookComment } from "@/contracts/entities/book";
+import { IBooksRepository } from "@/contracts/repositories/books-repository";
 
 import { prismaClient } from "@/database";
 
-export class BooksRepository implements IBooksRepository {
+export default class BooksRepository implements IBooksRepository {
 
     async create(bookData: IBook): Promise<IBook> {
         return await prismaClient.books.create({
@@ -60,6 +60,14 @@ export class BooksRepository implements IBooksRepository {
         return await prismaClient.booksComments.create({
             data: {
                 ...commentData
+            }
+        })
+    }
+
+    async removeComment(id: string): Promise<void> {
+        await prismaClient.booksComments.delete({
+            where: {
+                id
             }
         })
     }

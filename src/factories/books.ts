@@ -6,7 +6,7 @@ import { FindBookByIdController } from "@/controllers/books/find-book-by-id-cont
 import { FindBookByNameController } from "@/controllers/books/find-book-by-name-controller";
 import { FindBooksByAuthorController } from "@/controllers/books/find-books-by-author-controller";
 
-import { CreateBookCommentUseCase } from "@/usecases/books/create-book-comment-usecase";
+import { CreateBookCommentUseCase } from "@/usecases/books/comments/create-book-comment-usecase";
 import { CreateBookUseCase } from "@/usecases/books/create-book-usecase";
 import { UpdateBookUseCase } from "@/usecases/books/update-book-usecase";
 import { DeleteBookUseCase } from "@/usecases/books/delete-book-usecase";
@@ -14,8 +14,8 @@ import { FindBookByIdUseCase } from "@/usecases/books/find-book-by-id-usecase";
 import { FindBookByNameUseCase } from "@/usecases/books/find-book-by-name-usecase";
 import { FindBooksByAuthorUseCase } from "@/usecases/books/find-books-by-author-usecase";
 
-import { BooksRepository } from "@/database/repositories/books-repository";
-import { ControllerExecutor as executor } from "@/models/controllers/controller";
+import BooksRepository from "@/database/repositories/books-repository";
+import { ControllerExecutor as executor } from "@/contracts/controllers/controller";
 import { RequestHandler } from "express";
 
 export const createBookUseCase = (): CreateBookUseCase => {

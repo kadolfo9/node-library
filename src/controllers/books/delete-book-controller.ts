@@ -1,10 +1,10 @@
-import { Controller, ControllerResponse } from "@/models/controllers/controller";
-import { BadRequestException } from "@/models/exceptions/bad-request-exception";
-import { DeleteBookUseCase } from "@/usecases/books/delete-book-usecase";
+import { Controller, ControllerResponse } from "@/contracts/controllers/controller";
+import BadRequestException from "@/exceptions/bad-request-exception";
+import DeleteBookUseCase from "@/usecases/books/delete-book-usecase";
 import { Request, Response } from "express";
 import StatusCode from "status-code-enum";
 
-export class DeleteBookController implements Controller {
+export default class DeleteBookController implements Controller {
     constructor(
         private readonly deleteBookUseCase: DeleteBookUseCase
     ) { }

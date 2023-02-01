@@ -1,7 +1,7 @@
 import StatusCode from "status-code-enum"
-import { BaseException } from "./base-exception"
+import BaseException from "./base-exception"
 
-export class BadRequestException extends BaseException {
+export default class BadRequestException extends BaseException {
     public readonly statusCode = StatusCode.ClientErrorBadRequest
 
     constructor(

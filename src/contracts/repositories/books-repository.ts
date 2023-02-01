@@ -1,4 +1,4 @@
-import { IBook, IBookComment } from "models/entities/book"
+import { IBook, IBookComment } from "@/contracts/entities/book"
 
 export interface IBooksRepository {
     create (bookData: IBook): Promise<IBook>
